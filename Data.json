@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "name": "ali",
+      "email": "ali@mail.com",
+      "pass": "123456"
+    },
+    {
+      "name": "ben",
+      "email": "ben@mail.com",
+      "pass": "123456"
+    }
+  ]
+}

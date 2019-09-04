@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    Add Link Style -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/spring.css">
+    <!--    Add Angular js-->
+    <script src="js/angular.min.js"></script>
+    <!--    Add Chart Script-->
+    <script src="js/Chart.js"></script>
+    <title>Charity</title>
+</head>
+<body ng-app="admin" ng-controller="manege">
+<!--Navbar-->
+<div style="margin: 5px;">
+    <nav class="navbar-fixed" style="border-radius: 5px;">
+        <div class="nav-wrapper blue z-depth-1" style="border-radius: 5px;z-index: 20">
+            <a href="index.html" class="En_Titr  center brand-logo">Charity</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger right show-on-large"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <!--SidNav-->
+    <ul id="slide-out" class="sidenav blue lighten-1" >
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="img/charity/icons8_receive_cash_2.svg">
+                </div>
+                <a href="#user"><img class="circle" src="img/charity/icons8_volunteering.svg"></a>
+                <a href="#name"><span class="white-text name">ali</span></a>
+                <a href="#email"><span class="white-text email">ali@mail.com</span></a>
+            </div>
+        </li>
+
+
+        <li><a class="waves-effect white-text" href="#!">خروج</a></li>
+    </ul>
+
+
+</div>
+<!--Row Body-->
+<div class="row">
+    <div class="col l12">
+        <div class="card z-depth-2">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s12 m12 l12 ">
+                        <div class="card hoverable">
+                            <div class="card-content white-text">
+                                <span class="card-title fa_Titr grey-text">نمودار پرداخت ها</span>
+                                <canvas id="myChart" height="50"></canvas>
+                                <script>
+                                    var ctx = document.getElementById('myChart');
+                                    var myChart = new Chart(ctx, {
+                                        type: 'line',
+                                        data: {
+                                            labels: ['1', '5', '10', '15', '20', '30'],
+                                            datasets: [{
+                                                label: '# نمودار پرداخت ها',
+                                                data: [12, 19, 3, 5, 2, 3],
+                                                backgroundColor: [
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 99, 132, 1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                yAxes: [{
+                                                    ticks: {
+                                                        beginAtZero: true
+                                                    }
+                                                }]
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6 l3 ">
+                        <div class="card blue lighten-1 hoverable">
+                            <div class="card-content white-text">
+                                <span class="card-title">مدیران</span>
+                                <h1 class="center handFont_faDimaTitr">
+                                    226
+                                </h1>
+                                <h3 class="center handFont_faDimaTitr">
+                                    نفر
+                                </h3>
+                            </div>
+                            <div class="card-action center">
+                                <a class="white-text waves-effect waves-light  modal-trigger" href="#modal3">نمایش و
+                                    ویرایش</a>
+                                <div id="modal3" class="modal">
+                                    <div class="modal-content">
+                                        <table style="border-radius: 5px;padding: 5px" class="centered striped light-blue darken-1 z-depth-2 responsive-table" dir="rtl">
+                                            <caption class="blue-grey-text">لیست مدیران سایت</caption>
+                                            <thead>
+                                            <tr>
+                                                <th>نام</th>
+                                                <th>رایان نامه</th>
+                                                <th>زمر عبور</th>
+                                                <th>ویرایش</th>
+                                                <th>حذف</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr ng-repeat="x in names">
+                                                <td>{{x.name}}</td>
+                                                <td>{{x.email}}</td>
+                                                <td>{{x.pass}}</td>
+                                                <td>  <a class="waves-effect waves-teal white-text btn-flat"><i class="material-icons right">edit</i>ویرایش</a></td>
+                                                <td><a class="waves-effect waves-teal white-text btn-flat"><i class="material-icons right">delete</i>حذف</a></td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">خروج</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3 ">
+                        <div class="card blue lighten-1 hoverable">
+                            <div class="card-content white-text">
+                                <span class="card-title">کاربران</span>
+                                <h1 class="center handFont_faDimaTitr">
+                                    226
+                                </h1>
+                                <h3 class="center handFont_faDimaTitr">
+                                    نفر
+                                </h3>
+                            </div>
+                            <div class="card-action center">
+                                <a class="white-text waves-effect waves-light  modal-trigger" href="#modal2">نمایش و
+                                    ویرایش</a>
+                                <div id="modal2" class="modal">
+                                    <div class="modal-content">
+                                        <table style="border-radius: 5px;padding: 5px" class="centered striped light-blue darken-1 z-depth-2 responsive-table" dir="rtl">
+                                            <caption class="blue-grey-text">لیست کاربران سایت</caption>
+                                            <thead>
+                                            <tr>
+                                                <th>نام</th>
+                                                <th>رایان نامه</th>
+                                                <th>زمر عبور</th>
+                                                <th>ویرایش</th>
+                                                <th>حذف</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr ng-repeat="x in names">
+                                                <td>{{x.name}}</td>
+                                                <td>{{x.email}}</td>
+                                                <td>{{x.pass}}</td>
+                                                <td>  <a class="waves-effect waves-teal white-text btn-flat"><i class="material-icons right">edit</i>ویرایش</a></td>
+                                                <td><a class="waves-effect waves-teal white-text btn-flat"><i class="material-icons right">delete</i>حذف</a></td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">خروج</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l3 ">
+                        <div class="card blue lighten-1 hoverable">
+                            <div class="card-content white-text">
+                                <span class="card-title">موسسات خیریه</span>
+                                <h1 class="center handFont_faDimaTitr">
+                                    111
+                                </h1>
+                                <h3 class="center handFont_faDimaTitr">
+                                    موسسه
+                                </h3>
+                            </div>
+                            <div class="card-action center">
+                                <a class="white-text waves-effect waves-light  modal-trigger" href="#modal4">نمایش و
+                                    ویرایش</a>
+                                <div id="modal4" class="modal">
+                                    <div class="modal-content">
+                                        <table style="border-radius: 5px;padding: 5px" class="centered striped light-blue darken-1 z-depth-2 responsive-table" dir="rtl">
+                                            <caption class="blue-grey-text">لیست موسسات خیریه</caption>
+                                            <thead>
+                                            <tr>
+                                                <th>نام</th>
+                                                <th>رایان نامه</th>
+                                                <th>زمر عبور</th>
+                                                <th>ویرایش</th>
+                                                <th>حذف</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr ng-repeat="x in names">
+                                                <td>{{x.name}}</td>
+                                                <td>{{x.email}}</td>
+                                                <td>{{x.pass}}</td>
+                                                <td>  <a class="waves-effect waves-teal white-text btn-flat"><i class="material-icons right">edit</i>ویرایش</a></td>
+                                                <td><a class="waves-effect waves-teal white-text btn-flat"><i class="material-icons right">delete</i>حذف</a></td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">خروج</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3 ">
+                        <div class="card blue lighten-1 hoverable">
+                            <div class="card-content white-text">
+                                <span class="card-title">تراکنشهای مالی</span>
+                                <h1 class="center handFont_faDimaTitr">
+                                    25552
+                                </h1>
+                                <h3 class="center handFont_faDimaTitr">
+                                    تومان واریز
+                                </h3>
+                            </div>
+                            <div class="card-action center">
+                                <a class="white-text waves-effect waves-light  modal-trigger" href="#modal1">نمایش و
+                                    ویرایش</a>
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <table style="border-radius: 5px;padding: 5px" class="centered striped light-blue darken-1 z-depth-2 responsive-table" dir="rtl">
+                                            <caption class="blue-grey-text">لیست تراکنش های مالی</caption>
+                                            <thead>
+                                            <tr>
+                                                <th>تاریخ</th>
+                                                <th>نام موسسه</th>
+                                                <th>مبلغ</th>
+                                                <th>شماره پیگیری </th>
+                                                <th>پرداخت کننده</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr ng-repeat="x in names">
+                                                <td>19/10/1397</td>
+                                                <td>موسسه شماره یک</td>
+                                                <td>25000تومان</td>
+                                                <td>  123564218</td>
+                                                <td>شمس الملوک</td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">خروج</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--Footer-->
+<footer class="page-footer blue">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">پاداش نيكوكارى</h5>
+                <p class="grey-text text-lighten-4">
+                    زودتر از هر كار خوب ديگرى مى رسد و كيفر ستم و تجاوز زودتر از هر كار بد ديگرى گريبان مى گيرد.
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">لینک های دسترسی</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://mahak-charity.org">موسسه خیریه محک</a></li>
+                    <li><a class="grey-text text-lighten-3" href="http://www.ch-iran.org/">خانه خیرین ایران</a></li>
+                    <li><a class="grey-text text-lighten-3" href="http://www.iliacharity.org/">موسسه خیریه ایلیا</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3" href="https://roshdcharity.com/">بنیاد رشد</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container ">
+            © 2019 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="http://gcorp.cc/">GCORP.CC</a>
+        </div>
+    </div>
+</footer>
+<!--Add Script -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/spring.js"></script>
+</body>
+</html>

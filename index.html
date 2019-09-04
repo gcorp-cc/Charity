@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    Add Link Style -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/spring.css">
+    <!--    Add Angular js-->
+    <script src="js/angular.min.js"></script>
+    <title>Charity</title>
+</head>
+<body>
+<!--Navbar-->
+<div style="margin: 5px;">
+    <nav class="navbar-fixed" style="border-radius: 5px;">
+        <div class="nav-wrapper blue z-depth-1" style="border-radius: 5px;z-index: 20">
+            <a href="index.html" class="En_Titr  center brand-logo">Charity</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <ul class=" hide-on-med-and-down">
+                <li class="right"><a href="login.html">ورود</a></li>
+                <li class="right"><a href="register.html">ثبت نام</a></li>
+                <li ><a class='dropdown-trigger'  data-target='dropdown1' href="#"><i class="material-icons">notifications</i></a></li>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content center blue darken-2' dir="ltr" style="border-radius: 5px" >
+                    <li><a class="white-text center" href="#!">همایش 1</a></li>
+                    <li ><a class="white-text center"  href="#!"> 2 همایش</a></li>
+                    <li><a class="white-text center" href="#!">همایش 3</a></li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav center blue lighten-1" dir="ltr" id="mobile-demo">
+        <li ><a class='dropdown-trigger center'  data-target='dropdown2' href="#"><i class="material-icons  white-text">notifications</i></a></li>
+        <li ><a class="white-text" href="register.html">ثبت نام</a></li>
+        <li ><a class="white-text" href="login.html">ورود</a></li>
+
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown2' class='dropdown-content center blue darken-2' dir="ltr" style="border-radius: 5px" >
+            <li><a class="white-text center" href="#!">همایش 1</a></li>
+            <li ><a class="white-text center"  href="#!"> 2 همایش</a></li>
+            <li><a class="white-text center" href="#!">همایش 3</a></li>
+        </ul>
+    </ul>
+</div>
+<!--Slide Show-->
+<div class="slider" style="top: -75px;">
+    <ul class="slides">
+        <li>
+            <img src="img/2018-Charity-Day.jpg"> <!-- random image -->
+            <div class="caption center-align">
+                <h3 class="fa_Titr">صدقه بجا و نيكوكارى و نيكى</h3>
+                <h5 class="light grey-text text-lighten-3"> بدبختى را به خوشبختى تبديل و عمر را زياد و از مرگ بدجلوگيرى مى كند.</h5>
+            </div>
+        </li>
+        <li>
+            <img src="img/charityclassic-give-960x410.jpg"> <!-- random image -->
+            <div class="caption left-align">
+                <h3 class="fa_Titr">زياد كار نيك انجام دادن</h3>
+                <h5 class="light grey-text text-lighten-3">عمر را مى افزايد و نام را پرآوازه مى سازد.</h5>
+            </div>
+        </li>
+        <li>
+            <img src="img/GiveHands-iStock-Blog-1280x620-1280x620.jpg"> <!-- random image -->
+            <div class="caption right-align">
+                <h3 class="fa_Titr">نيكوكارى و خوش اخلاقى</h3>
+                <h5 class="light grey-text text-lighten-3"> خانه ها را آباد و عمرها را طولانى مى كنند.</h5>
+            </div>
+        </li>
+        <li>
+            <img src="img/hands-red-heart-health-insurance-donation-charity-concept_49149-458.jpg">
+            <!-- random image -->
+            <div class="caption center-align">
+                <h3 class="fa_Titr">کسی که مزه رنج و سختی را نچشیده</h3>
+                <h5 class="light grey-text text-lighten-3"> نیکی و احسان در نزد او جایگاهی ندارد.</h5>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--Information-->
+<div class="section " style="padding-bottom: 75px;">
+    <div class="row container">
+        <h2 class="header white-text handFont_faDimaTitr">موسسه ات خیریه</h2>
+        <p class="grey-text text-justify text-darken-3 lighten-3 handFont_faSayeh">
+            با درود و تقدیر از شما در صورت تمایل به انجام کمک های خیر خواهانه میتوانید با وارد کردن مبلغ مورد نظر و
+            انتخاب موسسات خیریه مورد نظر اقدام انجام این عمل خیر نمایید .
+            همچنین در صورت تمایل با اقدام به ثبت نام میتوانید در از فعالیت فای خیر خواهانه موسسات آگاه گردیده و به نحوی
+            در فعالیت های موسسات همکاری نمایید با تشکر.
+        </p>
+    </div>
+</div>
+<!--Charity-->
+<div class="bg-charity" ng-app="">
+
+    <!--    Row Price-->
+    <div class="row container">
+        <div class="col s12 m12 l12 ">
+            <div class=" transparent ">
+                <div class="card-content white-text">
+                    <p class="center">
+                        لطفا مبلغ مورد نظر خود را وارد کرده و با انتخاب یک یا تعدادی از موسسات ذیل نسبت به پرداخت وجوه
+                        خود اقدام نمایید با تشکر
+                    </p>
+                    <div class="row white-text">
+                        <div class="col l6 s12 right">
+                            <input class="white" ng-model="price" type="tel"
+                                   style="padding-right:5px;border-radius: 5px ">
+                        </div>
+                        <div class="input-field col l6 s12 center ">
+                            <p> تومان {{price|currency }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    Row Charity-->
+    <div class="row">
+        <div class="col l3 s6 m3 ">
+            <div class="card bg-charity-card z-depth-2 darken-1">
+
+                <div class="card-image">
+                    <img src="img/charity/icons8_amnesty_international.svg">
+                    <span class="card-title handFont_faDimaTitr">موسسه خیریه ...</span>
+                </div>
+                <div class="card-title">
+
+                    <p class="left-align" style="padding: 10px">
+                        <label>
+                            <input type="checkbox" ng-model="charity1"/>
+                            <span class="white-text">انتخاب</span>
+                        </label>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col l3 s6 m3 ">
+            <div class="card bg-charity-card z-depth-2 darken-1">
+
+                <div class="card-image">
+                    <img src="img/charity/icons8_receive_cash_2.svg">
+                    <span class="card-title handFont_faDimaTitr">موسسه خیریه ...</span>
+                </div>
+                <div class="card-title">
+
+                    <p class="left-align" style="padding: 10px">
+                        <label>
+                            <input type="checkbox" ng-model="charity2"/>
+                            <span class="white-text">انتخاب</span>
+                        </label>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col l3 s6 m3 ">
+            <div class="card bg-charity-card z-depth-2 darken-1">
+
+                <div class="card-image">
+                    <img src="img/charity/icons8_unicef_filled.svg">
+                    <span class="card-title handFont_faDimaTitr">موسسه خیریه ...</span>
+                </div>
+                <div class="card-title">
+
+                    <p class="left-align" style="padding: 10px">
+                        <label>
+                            <input type="checkbox" ng-model="charity3"/>
+                            <span class="white-text">انتخاب</span>
+                        </label>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col l3 s6 m3 ">
+            <div class="card bg-charity-card z-depth-2 darken-1">
+
+                <div class="card-image">
+                    <img src="img/charity/icons8_volunteering.svg">
+                    <span class="card-title handFont_faDimaTitr">موسسه خیریه ...</span>
+                </div>
+                <div class="card-title">
+
+                    <p class="left-align" style="padding: 10px">
+                        <label>
+                            <input type="checkbox" ng-model="charity4"/>
+                            <span class="white-text">انتخاب</span>
+                        </label>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--    Row Check Price -->
+    <div class="row container">
+        <!--        Sussed-->
+            <div class="col s12 m6 right">
+                <div class="card price-card darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title handFont_faSayeh">پرداخت پیش فرض</span>
+                        <p class="center  grey-text text-darken-3">
+                            با پرداخت به صورت پیش فرض مبلغ اهدایی به صورت مساوی بین موسسات انتخابی تقسیم و پرداخت میگردد
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect blue waves-light btn modal-trigger" href="#modal1"> پرداخت مبلغ {{price}} تومان</a>
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4 class="fa_Titr">از حسن عمل شما سپاس گذاریم </h4>
+                                <p>مبلغ  {{price}} تومان با موفقیت واریز گردید</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">خروج</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--Edit-->
+        <div class="col s12 m6 right">
+            <div class="card price-card darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title handFont_faSayeh">پرداخت سفارشی</span>
+                    <p class="center  grey-text text-darken-3">
+در پرداخت به صورت سفارشی شما قاد خواهید بود تا  مبلغ اهدایی خود را به میزان دخواه به موسسات انتخابی خود اختصاص دهید
+                    </p>
+                </div>
+                <div class="card-action">
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect blue waves-light btn modal-trigger" href="#modal3"> پرداخت مبلغ {{price}} تومان</a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal3" class="modal bottom-sheet">
+                        <div class="modal-content">
+                            <h4 class="fa_Titr">پرداخت سفارشی</h4>
+                            <p>مبلغ قابل پرداخت {{price}} تومان میباشد</p>
+                            <form action="#">
+                                <div class="row" ng-show="charity1">
+                                    <p>مبلغ {{price/100*range}} تومان به حساب موسسه شماره 1 واریز میگردد</p>
+                                    <div class="col l3 m6 right">
+                                        <p class="range-field" dir="ltr">
+                                            <input type="range"  min="0" max="100" value="100" ng-model="range" />
+                                        <p></p>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row" ng-show="charity2">
+                                    <p>مبلغ {{price/100*range}} تومان به حساب موسسه شماره 2 واریز میگردد</p>
+                                    <div class="col l3 m6 right">
+                                        <p class="range-field" dir="ltr">
+                                            <input type="range"  min="0" max="100" value="100" ng-model="range" />
+                                        <p></p>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row" ng-show="charity3">
+                                    <p>مبلغ {{price/100*range}} تومان به حساب موسسه شماره 3 واریز میگردد</p>
+                                    <div class="col l3 m6 right">
+                                        <p class="range-field" dir="ltr">
+                                            <input type="range"  min="0" max="100" value="100" ng-model="range" />
+                                        <p></p>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row" ng-show="charity4">
+                                    <p>مبلغ {{price/100*range}} تومان به حساب موسسه شماره 4 واریز میگردد</p>
+                                    <div class="col l3 m6 right">
+                                        <p class="range-field" dir="ltr">
+                                            <input type="range"  min="0" max="100" value="100" ng-model="range" />
+                                        <p></p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">پرداخت</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Footer-->
+<footer class="page-footer blue">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">پاداش نيكوكارى</h5>
+                <p class="grey-text text-lighten-4">
+                    زودتر از هر كار خوب ديگرى مى رسد و كيفر ستم و تجاوز زودتر از هر كار بد ديگرى گريبان مى گيرد.
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">لینک های دسترسی</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://mahak-charity.org">موسسه خیریه محک</a></li>
+                    <li><a class="grey-text text-lighten-3" href="http://www.ch-iran.org/">خانه خیرین ایران</a></li>
+                    <li><a class="grey-text text-lighten-3" href="http://www.iliacharity.org/">موسسه خیریه ایلیا</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://roshdcharity.com/">بنیاد رشد</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container ">
+            © 2019 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="http://gcorp.cc/">GCORP.CC</a>
+        </div>
+    </div>
+</footer>
+<!--Add Script -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/spring.js"></script>
+</body>
+</html>

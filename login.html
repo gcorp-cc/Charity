@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    Add Link Style -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/spring.css">
+    <!--    Add Angular js-->
+    <script src="js/angular.min.js"></script>
+    <title>Charity</title>
+</head>
+<body>
+<!--Navbar-->
+<div style="margin: 5px;">
+    <nav class="navbar-fixed" style="border-radius: 5px;">
+        <div class="nav-wrapper blue z-depth-1" style="border-radius: 5px;z-index: 20">
+            <a href="index.html" class="En_Titr  center brand-logo">Charity</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <ul class=" hide-on-med-and-down">
+                <li class="right"><a href="login.html">ورود</a></li>
+                <li class="right"><a href="register.html">ثبت نام</a></li>
+                <li ><a class='dropdown-trigger'  data-target='dropdown1' href="#"><i class="material-icons">notifications</i></a></li>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content center blue darken-2' dir="ltr" style="border-radius: 5px" >
+                    <li><a class="white-text center" href="#!">همایش 1</a></li>
+                    <li ><a class="white-text center"  href="#!"> 2 همایش</a></li>
+                    <li><a class="white-text center" href="#!">همایش 3</a></li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav center blue lighten-1" dir="ltr" id="mobile-demo">
+        <li ><a class='dropdown-trigger center'  data-target='dropdown2' href="#"><i class="material-icons  white-text">notifications</i></a></li>
+        <li ><a class="white-text" href="register.html">ثبت نام</a></li>
+        <li ><a class="white-text" href="login.html">ورود</a></li>
+
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown2' class='dropdown-content center blue darken-2' dir="ltr" style="border-radius: 5px" >
+            <li><a class="white-text center" href="#!">همایش 1</a></li>
+            <li ><a class="white-text center"  href="#!"> 2 همایش</a></li>
+            <li><a class="white-text center" href="#!">همایش 3</a></li>
+        </ul>
+    </ul>
+</div>
+<!--Log In-->
+<div class="row " style="padding-top: 8px"  dir="ltr">
+    <div class="col s12 m6 offset-m3">
+        <div class="card z-depth-3 col s12">
+            <form>
+                <div class="card-content ">
+                    <span class="card-title grey-text darken-1 center">ورود</span>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">رایان نامه</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">رمز عبور</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <p>
+                                <label >
+                                    <input type="checkbox"/>
+                                    <span>مرا به خاطر بسپار</span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action " dir="rtl">
+                    <a class="btn blue" href="#">ورود</a>
+                    <a href="#">رمز خود را فراموش کرده اید ?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Footer-->
+<footer class="page-footer blue">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">پاداش نيكوكارى</h5>
+                <p class="grey-text text-lighten-4">
+                    زودتر از هر كار خوب ديگرى مى رسد و كيفر ستم و تجاوز زودتر از هر كار بد ديگرى گريبان مى گيرد.
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">لینک های دسترسی</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://mahak-charity.org">موسسه خیریه محک</a></li>
+                    <li><a class="grey-text text-lighten-3" href="http://www.ch-iran.org/">خانه خیرین ایران</a></li>
+                    <li><a class="grey-text text-lighten-3" href="http://www.iliacharity.org/">موسسه خیریه ایلیا</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://roshdcharity.com/">بنیاد رشد</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container ">
+            © 2019 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="http://gcorp.cc/">GCORP.CC</a>
+        </div>
+    </div>
+</footer>
+<!--Add Script -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/spring.js"></script>
+</body>
+</html>
